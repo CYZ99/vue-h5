@@ -30,10 +30,11 @@ const tools = [
 const logout = async () => {
   await showConfirmDialog({
     title: '温馨提示',
-    message: '您确定要退出优医问诊吗?'
+    message: '您确定要退在线问诊吗?'
   })
   // 清除 token
   store.delUser()
+  router
   // 路由跳转
   router.push('/login')
 }

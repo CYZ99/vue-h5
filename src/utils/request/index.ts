@@ -3,7 +3,7 @@ import { useUserStore } from '@/stores'
 import router from '@/router'
 import { showFailToast } from 'vant'
 
-const baseURL = 'https://consult-api.itheima.net'
+const baseURL = import.meta.env.VITE_APP_BASE_URL
 const timeout = 10000
 
 type Data<T> = {

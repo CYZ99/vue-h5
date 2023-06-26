@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { useUserStore } from '@/stores'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
@@ -11,7 +11,7 @@ const router = createRouter({
   // import.meta.env.BASE_URL 默认为基准地址 '/'
   // 部署到 root 根目录, 基准地址根据部署的基准地址来修改
   // 需要修改可以在 vite.config.ts base属性修改
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes
 })
 
@@ -20,7 +20,7 @@ const router = createRouter({
 // vue3 : 两个参数
 router.beforeEach((to) => {
   NProgress.start()
-  document.title = `优医问诊-${to.meta.title || ''}`
+  document.title = `在线问诊-${to.meta.title || ''}`
   // 判断是否有 token 有 决定是否可以访问 to 页面
   // 1. 有 token 排除 登录注册页面 => 正常访问
   // 2. 没有 token 跳转到登录页 => return '/login'
@@ -32,7 +32,7 @@ router.beforeEach((to) => {
 
 router.afterEach((to) => {
   // 修改标题
-  document.title = `优医问诊-${to.meta.title || ''}`
+  document.title = `在线问诊-${to.meta.title || ''}`
   NProgress.done()
 })
 
