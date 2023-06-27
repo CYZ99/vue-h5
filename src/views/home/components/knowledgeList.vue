@@ -20,8 +20,8 @@ const params = ref<KnowledgeParams>({
 
 const onLoad = async () => {
   const res = await getKnowledgePage(params.value)
-  console.log(params.value)
-  console.log(res)
+  // console.log(params.value)
+  // console.log(res)
   list.value.push(...res.data.rows)
   // 判断数据是否加载完成
   if (list.value.length >= res.data.total) {

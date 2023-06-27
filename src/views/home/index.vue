@@ -24,7 +24,7 @@ const store = useConsultStore()
     <div class="home-navs">
       <van-row>
         <van-col span="8">
-          <router-link to="/" class="nav">
+          <router-link to="/consult/dep" class="nav">
             <cp-icon name="home-doctor"></cp-icon>
             <p class="title">问医生</p>
             <p class="desc">按科室查问医生</p>
@@ -120,10 +120,10 @@ const store = useConsultStore()
     left: 0;
     top: 0;
     width: 100%;
-    height: 120px;
+    height: 115px;
     background: linear-gradient(180deg, rgba(41, 77, 210, 0.85), #2967ec);
-    border-bottom-left-radius: 180px 30px;
-    border-bottom-right-radius: 180px 30px;
+    border-bottom-left-radius: 200px 30px;
+    border-bottom-right-radius: 200px 30px;
   }
 
   .con {
@@ -140,9 +140,10 @@ const store = useConsultStore()
     }
 
     .search {
+      margin-top: -6px;
       height: 40px;
       border-radius: 20px;
-      box-shadow: 0px 15px 22px -7px rgba(224, 236, 250, 0.8);
+      /* box-shadow: 0px 15px 22px -7px rgba(224, 236, 250, 0.8); */
       background-color: #fff;
       display: flex;
       align-items: center;

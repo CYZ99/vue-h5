@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useConsultStore } from '@/stores'
+import { useRouter } from 'vue-router'
 const store = useConsultStore()
+const router = useRouter()
+const handleRight = () => {
+  router.push('/user/consult')
+}
 </script>
 <!-- 1. 极速问诊页面-选择问诊类型 -->
 <!-- 选择完之后将类型数据存放在 store 中以便后续发起请求时,参数数据完整 -->
 <template>
   <div class="consult-fast-page">
-    <cp-nav-bar title="极速问诊" right-text="问诊记录"></cp-nav-bar>
+    <cp-nav-bar title="极速问诊" right-text="问诊记录" @click-right="handleRight"></cp-nav-bar>
     <div class="fast-logo">
       <img class="img" src="@/assets/consult-fast.png" alt="" />
       <p class="text"><span>20s</span> 快速匹配专业医生</p>

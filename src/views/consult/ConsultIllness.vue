@@ -102,6 +102,8 @@ onMounted(() => {
       <van-field
         type="textarea"
         rows="3"
+        label="病情描述"
+        label-align="top"
         placeholder="请详细描述您的病情，病情描述不能为空"
         v-model="form.illnessDesc"
       ></van-field>
@@ -176,7 +178,6 @@ onMounted(() => {
 
 .illness-form {
   padding: 15px;
-
   .van-field {
     padding: 0;
 

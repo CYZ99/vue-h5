@@ -62,6 +62,7 @@ const openPay = async () => {
 // 打开支付选项后不可回退,只影响当前页面
 onBeforeRouteLeave(() => {
   if (orderId.value) return false
+  show.value = false
 })
 
 // 关闭前做的事情

@@ -79,7 +79,7 @@ onMounted(() => {
     <div class="user-page-order">
       <div class="head">
         <h3>药品订单</h3>
-        <router-link to="/order">全部订单 <van-icon name="arrow" /></router-link>
+        <router-link to="/user/consult">全部订单 <van-icon name="arrow" /></router-link>
       </div>
       <van-row v-if="userData?.orderInfo">
         <van-col span="6">

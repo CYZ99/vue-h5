@@ -86,7 +86,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/user/consult',
     component: () => import('@/views/user/ConsultOrder.vue'),
-    meta: { title: '问诊订单' }
+    meta: { title: '问诊记录' }
   },
   // 问诊详情
   {

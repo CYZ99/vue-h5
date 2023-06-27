@@ -39,6 +39,8 @@ const showDialog = (item?: Patient) => {
   if (item) {
     const { id, age, name, idCard, defaultFlag, gender } = item
     patient.value = { id, age, name, idCard, defaultFlag, gender }
+  } else {
+    patient.value = { ...initPatient }
   }
   isShow.value = true
 }

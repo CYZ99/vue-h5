@@ -7,18 +7,19 @@ const props = defineProps<{
   show: boolean
   orderId: string
   onClose?: () => void
-  actualPayment: number | undefined
+  actualPayment?: number | undefined
   payCallback?: string
 }>()
 const paymentMethod = ref<0 | 1>(1)
 
+const payBackUrl = import.meta.env.VITE_APP_PAY_BACK_URL
 const getPayUrl = async () => {
   if (paymentMethod.value === undefined) return showToast('请选择支付方式')
   showLoadingToast({ message: '正在跳转支付', duration: 0 })
   const res = await getConsultOrderPayUrl({
     orderId: props.orderId, // 订单 id
     paymentMethod: paymentMethod.value, // 支付方式
-    payCallback: props.payCallback || 'http://localhost:5173/room'
+    payCallback: props.payCallback || payBackUrl
   })
   // 跳到另一个支付宝网站
   window.location.href = res.data.payUrl

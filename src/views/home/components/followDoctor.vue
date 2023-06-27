@@ -27,7 +27,7 @@ onMounted(() => {
     <div class="body">
       <!-- 这里的宽度需要做适配因为不是 px 单位的插件无法自动适配 -->
       <!-- :width="(150 / 375) * width" -->
-      <van-swipe :autoplay="2000" :width="(150 / 375) * width" :showIndicators="false">
+      <van-swipe :autoplay="3000" :width="(150 / 375) * width" :showIndicators="false" loop>
         <van-swipe-item v-for="item in list" :key="item.id">
           <doctorCard :item="item"></doctorCard>
         </van-swipe-item>
